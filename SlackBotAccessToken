@@ -1,0 +1,45 @@
+App Credentials
+These credentials allow your app to access the Slack API. They are secret. Please don't share your app credentials with anyone, include them in public code repositories, or store them in insecure ways.
+
+App ID
+A013T28PU8J
+Date of App Creation
+May 17, 2020
+Client ID
+664796270500.1129076810290
+Client Secret
+6a028fe23f555b607219b22d942ad18f
+You'll need to send this secret along with your client ID when making your oauth.v2.access request.
+Signing Secret
+76443df520ed015faf05429db2258900
+Slack signs the requests we send you using this secret. Confirm that each request comes from Slack by verifying its unique signature.
+Verification Token
+T65f6zjCnV2YB0aFoRdD2U14
+This deprecated Verification Token can still be used to verify that requests come from Slack, but we strongly recommend using the above, more secure, signing secret instead.
+
+
+https://hooks.slack.com/services/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
+
+
+oAuth access token -
+
+xoxp-664796270500-667121545495-1127773130549-16dc398cb4d491042a1fc9f9047af4cf
+xoxp-664796270500-667121545495-1127773130549-16dc398cb4d491042a1fc9f9047af4cf
+
+botuser o auth access token
+
+xoxb-664796270500-1114410484743-Gj8y8D4sKv6Y4FfaovmJ98ol
+xoxb-664796270500-1114410484743-Gj8y8D4sKv6Y4FfaovmJ98ol
+xoxb-664796270500-1114410484743-Gj8y8D4sKv6Y4FfaovmJ98ol
+
+
+curl -X POST -H 'Authorization: Bearer xoxb-664796270500-1114410484743-Gj8y8D4sKv6Y4FfaovmJ98ol' -H 'Content-type: application/json;charset=utf-8' --data '{"channel":"#general","text":"Hello, Slack!"}' https://slack.com/api/chat.postMessage
+
+
+
+nova-api.log:2020-05-18 07:51:39,542.542 13322 INFO nova.api.openstack.compute.pf9_payload [-] req-c433f3d1-2e3b-4b61-b301-d86ceb4c9c00 Payload: {"events": [{"status": "completed", "tag": "7d6ba3bc-dbd3-4d8d-80f3-8f88375620cc", "name": "network-vif-unplugged", "server_uuid": "86038082-fc34-403b-8a0a-cb508bf64196"}]}
+nova-api.log:2020-05-18 07:51:39,651.651 13322 INFO nova.api.openstack.compute.server_external_events [req-c433f3d1-2e3b-4b61-b301-d86ceb4c9c00 ca4e3e3ac30e44538b9afa35857b9102 a55203cadeb346d083f9be812861e5d5 - default default] Creating event network-vif-unplugged:7d6ba3bc-dbd3-4d8d-80f3-8f88375620cc for instance 86038082-fc34-403b-8a0a-cb508bf64196 on e482b3c5-fcd5-4bff-89dd-b05a830f324a
+nova-api.log:2020-05-18 07:51:39,659.659 13322 INFO nova.osapi_compute.wsgi.server [req-c433f3d1-2e3b-4b61-b301-d86ceb4c9c00 ca4e3e3ac30e44538b9afa35857b9102 a55203cadeb346d083f9be812861e5d5 - default default] 127.0.0.1,127.0.0.1 "POST //v2.1/a55203cadeb346d083f9be812861e5d5/os-server-external-events HTTP/1.1" status: 200 len: 560 time: 0.1174030
+
+ostackhost.log:2020-05-18 09:51:39.913 WARNING nova.compute.manager [req-c433f3d1-2e3b-4b61-b301-d86ceb4c9c00 nova services] [instance: 86038082-fc34-403b-8a0a-cb508bf64196] Received unexpected event network-vif-unplugged-7d6ba3bc-dbd3-4d8d-80f3-8f88375620cc for instance with vm_state stopped and task_state powering-on.
+ostackhost.log:2020-05-18 09:52:08.030 INFO nova.compute.manager [req-2067da08-471f-4900-a4c1-090962a828bc ernesto.franchini@neen.it NEEN] [instance: 86038082-fc34-403b-8a0a-cb508bf64196] Successfully reverted task state from powering-on on failure for instance.
